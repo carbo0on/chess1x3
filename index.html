@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شطرنج ثلاثة لاعبين</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <h1>♟ شطرنج ثلاثة لاعبين</h1>
+    <button id="btn-new-game">لعبة جديدة</button>
+  </header>
+
+  <main class="main-layout">
+    <aside class="players-panel">
+      <div class="player-card" id="card-white">
+        <div class="player-header">
+          <span class="player-color-dot white-dot"></span>
+          <span class="player-name">اللاعب 1 (أبيض)</span>
+        </div>
+        <div class="player-status" id="status-white">نشط</div>
+        <div class="captured-label">القطع المأسورة:</div>
+        <div class="captured-pieces" id="captured-white"></div>
+      </div>
+      <div class="player-card" id="card-black">
+        <div class="player-header">
+          <span class="player-color-dot black-dot"></span>
+          <span class="player-name">اللاعب 2 (أسود)</span>
+        </div>
+        <div class="player-status" id="status-black">نشط</div>
+        <div class="captured-label">القطع المأسورة:</div>
+        <div class="captured-pieces" id="captured-black"></div>
+      </div>
+      <div class="player-card" id="card-red">
+        <div class="player-header">
+          <span class="player-color-dot red-dot"></span>
+          <span class="player-name">اللاعب 3 (أحمر)</span>
+        </div>
+        <div class="player-status" id="status-red">نشط</div>
+        <div class="captured-label">القطع المأسورة:</div>
+        <div class="captured-pieces" id="captured-red"></div>
+      </div>
+    </aside>
+
+    <section class="board-section">
+      <div class="turn-indicator" id="turn-indicator">دور: اللاعب 1 (أبيض)</div>
+      <div id="board-container">
+        <svg id="chess-board" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </section>
+
+    <aside class="moves-panel">
+      <h3>سجل الحركات</h3>
+      <div id="move-log"></div>
+    </aside>
+  </main>
+
+  <!-- Promotion Modal -->
+  <div id="promotion-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>ترقية البيدق — اختر القطعة:</h3>
+      <div class="promotion-choices">
+        <button class="promo-btn" data-piece="Q">♛ وزير</button>
+        <button class="promo-btn" data-piece="R">♜ رخ</button>
+        <button class="promo-btn" data-piece="B">♝ فيل</button>
+        <button class="promo-btn" data-piece="N">♞ حصان</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="gameover-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="gameover-title">انتهت اللعبة!</h2>
+      <p id="gameover-msg"></p>
+      <button id="btn-play-again">العب مجدداً</button>
+    </div>
+  </div>
+
+  <script src="scripts/board.js"></script>
+  <script src="scripts/pieces.js"></script>
+  <script src="scripts/rules.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
