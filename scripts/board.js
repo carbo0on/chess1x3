@@ -239,4 +239,5 @@ const Board = {
   cellCenter, cellRect,
   createInitialBoard, placeInitialPieces,
   CX, CY, CELL_W, CELL_H,
+  PLAYER_SECTOR,
 };

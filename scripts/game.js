@@ -4,10 +4,7 @@
  */
 
 const TURN_ORDER = ["white", "black", "red"];
-
-const PLAYER_SECTOR = { white: "W", black: "B", red: "R" };
-// تصدير لاستخدامه في pieces.js
-Board.PLAYER_SECTOR = PLAYER_SECTOR;
+// PLAYER_SECTOR مُعرَّف في board.js ومُصدَّر عبر Board.PLAYER_SECTOR
 
 function createGameState() {
   const board = Board.createInitialBoard();
