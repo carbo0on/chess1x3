@@ -76,8 +76,14 @@ function checkForGameEnd() {
   }
 
   if (Rules.isStalemate(gameState.board, cur.id, activePlayers, gameState.enPassantTarget)) {
-    // تعادل: تخطّي الدور
-    nextTurn();
+    // تخطّي الدور مباشرةً بدون استدعاء nextTurn تجنّباً للتكرار اللانهائي
+    let idx = gameState.currentTurnIndex;
+    for (let i = 0; i < gameState.players.length; i++) {
+      idx = (idx + 1) % gameState.players.length;
+      if (gameState.players[idx].active) break;
+    }
+    gameState.currentTurnIndex = idx;
+    updateCheckStatus();
   }
 }
 

@@ -184,10 +184,10 @@ function cellRect(sector, col, row) {
   const px = Math.cos(perpAngle), py = Math.sin(perpAngle);
 
   const corners = [
-    [x + px * hw + ay * hh, y + py * hw - ax * hh],
-    [x - px * hw + ay * hh, y - py * hw - ax * hh],
-    [x - px * hw - ay * hh, y - py * hw + ax * hh],
-    [x + px * hw - ay * hh, y + py * hw + ax * hh],
+    [x + px * hw + ax * hh, y + py * hw + ay * hh],
+    [x - px * hw + ax * hh, y - py * hw + ay * hh],
+    [x - px * hw - ax * hh, y - py * hw - ay * hh],
+    [x + px * hw - ax * hh, y + py * hw - ay * hh],
   ];
   return corners.map(([cx, cy]) => `${cx.toFixed(1)},${cy.toFixed(1)}`).join(" ");
 }

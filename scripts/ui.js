@@ -24,6 +24,8 @@ function colorIndexToFill(sector, idx) {
 function renderBoard() {
   const svg = document.getElementById("chess-board");
   svg.setAttribute("viewBox", `0 0 ${SVG_SIZE} ${SVG_SIZE}`);
+  svg.setAttribute("width", SVG_SIZE);
+  svg.setAttribute("height", SVG_SIZE);
   svg.innerHTML = "";
 
   const state = Game.state;
